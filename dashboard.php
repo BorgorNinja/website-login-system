@@ -22,12 +22,15 @@ if (isset($_POST['submit'])) {
     
     if ($count > 0) {
         echo "Database check Validated! Welcome $username!";
+        header("Location: upload.html");
     } else {
         echo "Error: Your credentials could not be found in the database.";
     }
 } else {
 ?>
-<head></head>
+<head>
+    <p> Upload a File Here </p>
+</head>
 <body>
     <form action="dashboard.php" method="post">
         Username: <input type="text" name="username"><br><br>
