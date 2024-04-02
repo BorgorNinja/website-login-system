@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<script>
+  <?php
+ if ($handle = opendir('uploads/')) {
+   while (false !== ($file = readdir($handle))) {
+          if ($file != "." && $file != "..") {
+            $thelist .= '<li><a href="'.$file.'">'.$file.'</a></li>';
+          }
+       }
+  closedir($handle);
+  }
+?>
+</script>
+<h1>List of files:</h1>
+<ul><?php echo $thelist; ?></ul>
+</script>
 <html>
 <head>
 <form action="upload.php" method="post" enctype="multipart/form-data">
